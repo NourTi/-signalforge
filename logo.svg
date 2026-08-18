@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>SignalForge mark</title>
+  <defs><linearGradient id="lime" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e9f7b9"/><stop offset="1" stop-color="#c3e782"/></linearGradient></defs>
+  <rect width="128" height="128" rx="33" fill="#17341d"/>
+  <path d="M64 23c7 22 19 34 41 41-22 7-34 19-41 41-7-22-19-34-41-41 22-7 34-19 41-41Z" fill="url(#lime)"/>
+  <path d="M64 40c4 13 11 20 24 24-13 4-20 11-24 24-4-13-11-20-24-24 13-4 20-11 24-24Z" fill="#17341d"/>
+  <circle cx="64" cy="64" r="6" fill="#e9f7b9"/>
+</svg>

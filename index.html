@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SignalForge is an approval-first prospecting workspace for B2B service firms." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SignalForge — Prospecting, with a pulse." />
+    <meta property="og:description" content="A private, approval-first prospecting workspace for B2B service firms." />
+    <meta property="og:url" content="https://nourti.github.io/-signalforge/" />
+    <meta property="og:image" content="https://nourti.github.io/-signalforge/signalforge-social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SignalForge — Prospecting, with a pulse." />
+    <meta name="twitter:description" content="A private, approval-first prospecting workspace for B2B service firms." />
+    <meta name="twitter:image" content="https://nourti.github.io/-signalforge/signalforge-social-preview.png" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <title>SignalForge — Prospecting, with a pulse.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#15261a; --forest:#1e4827; --moss:#597756; --lime:#d8f09b; --paper:#f7f9f3; --line:#dbe5d8; --muted:#6e7d6d; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--paper); color:var(--ink); font-family:Manrope,Arial,sans-serif; }
+      a { color:inherit; text-decoration:none; }
+      .grid { background-image:linear-gradient(rgba(32,69,38,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(32,69,38,.045) 1px,transparent 1px); background-size:34px 34px; }
+      .wrap { width:min(1180px,calc(100% - 42px)); margin:auto; }
+      .eyebrow { color:var(--moss); font-family:"DM Mono",monospace; font-size:10px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; }
+      .display { font-family:"Playfair Display",Georgia,serif; letter-spacing:-.065em; }
+      .button { display:inline-flex; align-items:center; gap:9px; border-radius:12px; padding:14px 18px; font-size:12px; font-weight:800; transition:.18s ease; }
+      .button:hover { transform:translateY(-2px); }
+      .button.primary { background:var(--forest); color:#fff; box-shadow:0 12px 24px rgba(30,72,39,.16); }
+      .button.secondary { border:1px solid #cedcca; background:#fff; color:#29432c; }
+      .nav { align-items:center; display:flex; justify-content:space-between; padding:24px 0; }
+      .brand { display:flex; align-items:center; gap:10px; }
+      .brand-mark { align-items:center; background:var(--lime); border-radius:12px; color:#18391f; display:grid; font-size:19px; font-weight:800; height:39px; place-items:center; width:39px; }
+      .brand strong { display:block; font-size:15px; letter-spacing:-.05em; }
+      .brand small { color:var(--muted); display:block; font-family:"DM Mono",monospace; font-size:8px; letter-spacing:.19em; margin-top:2px; text-transform:uppercase; }
+      .navlinks { color:#5b6a5a; display:flex; font-size:11px; font-weight:700; gap:27px; }
+      .hero { min-height:680px; overflow:hidden; padding:90px 0 70px; position:relative; }
+      .hero:after { border:1px solid rgba(63,112,63,.18); border-radius:50%; content:""; height:510px; position:absolute; right:-230px; top:30px; width:510px; }
+      .hero-inner { display:grid; gap:55px; grid-template-columns:1.03fr .97fr; position:relative; z-index:1; }
+      .hero h1 { font-size:clamp(52px,7vw,91px); line-height:.94; margin:20px 0 23px; max-width:690px; }
+      .hero h1 em { color:#456c45; font-weight:600; }
+      .hero p { color:#647363; font-size:14px; line-height:1.85; max-width:510px; }
+      .hero-actions { display:flex; flex-wrap:wrap; gap:11px; margin-top:30px; }
+      .micro { align-items:center; color:#6f7c6d; display:flex; font-size:10px; gap:8px; margin-top:19px; }
+      .micro i { background:#78a06f; border-radius:50%; height:7px; width:7px; }
+      .product { align-self:center; background:#fff; border:1px solid var(--line); border-radius:22px; box-shadow:0 25px 55px rgba(25,62,31,.12); overflow:hidden; transform:rotate(1.3deg); }
+      .product-top { align-items:center; border-bottom:1px solid #e7ede5; display:flex; justify-content:space-between; padding:16px 19px; }
+      .dots { display:flex; gap:5px; } .dots b { background:#c5d1c3; border-radius:50%; display:block; height:6px; width:6px; }
+      .product-title { color:#6d7a6c; font-family:"DM Mono",monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
+      .product-body { display:grid; grid-template-columns:135px 1fr; min-height:365px; }
+      .mock-nav { background:#17341d; color:#c3d1c0; padding:22px 13px; }
+      .mock-logo { color:#fff; font-size:11px; font-weight:800; margin-bottom:29px; }
+      .mock-link { border-radius:7px; font-size:9px; margin:6px 0; padding:8px; } .mock-link.active { background:#36573c; color:#fff; }
+      .mock-main { padding:23px; }
+      .mock-head { align-items:center; display:flex; justify-content:space-between; }
+      .mock-head strong { font-size:15px; letter-spacing:-.05em; }
+      .mock-tag { background:#e7f2cf; border-radius:10px; color:#3b6138; font-size:8px; font-weight:800; padding:7px 9px; }
+      .company { border:1px solid #e2e9df; border-radius:12px; margin-top:18px; padding:13px; }
+      .company-row { align-items:center; display:flex; gap:9px; }
+      .avatar { align-items:center; background:#e7f0df; border-radius:9px; color:#497348; display:grid; font-size:11px; font-weight:800; height:30px; place-items:center; width:30px; }
+      .company-name { font-size:10px; font-weight:800; } .company-meta { color:#7c8a7a; font-size:8px; margin-top:3px; }
+      .signal { color:#476c44; font-family:"DM Mono",monospace; font-size:8px; margin:16px 0 7px; text-transform:uppercase; }
+      .line { background:#edf2eb; border-radius:3px; height:7px; margin:6px 0; } .line.short { width:65%; }
+      .approve { align-items:center; background:#eff6e7; border-radius:9px; color:#365d39; display:flex; font-size:9px; font-weight:800; gap:6px; margin-top:14px; padding:10px; }
+      .check { align-items:center; background:#4a824a; border-radius:50%; color:#fff; display:grid; font-size:8px; height:14px; place-items:center; width:14px; }
+      .signal-card { background:var(--forest); border-radius:20px; color:#fff; margin:0 auto; max-width:1050px; padding:27px 32px; position:relative; }
+      .signal-card:after { border:1px solid rgba(216,240,155,.3); border-radius:50%; content:""; height:160px; position:absolute; right:30px; top:-47px; width:160px; }
+      .signal-card .eyebrow { color:#cce4a2; } .signal-card p { color:#cfdbcd; font-size:13px; line-height:1.7; margin:8px 0 0; max-width:650px; }
+      section { padding:104px 0; }
+      .section-top { align-items:end; display:flex; gap:25px; justify-content:space-between; margin-bottom:39px; }
+      h2 { font-size:clamp(35px,4.4vw,58px); line-height:1; margin:13px 0 0; max-width:680px; }
+      .section-note { color:#6d7b6b; font-size:12px; line-height:1.7; max-width:290px; }
+      .steps { display:grid; gap:15px; grid-template-columns:repeat(3,1fr); }
+      .step { background:#fff; border:1px solid var(--line); border-radius:18px; min-height:270px; padding:24px; }
+      .step-no { color:#6a8567; font-family:"DM Mono",monospace; font-size:10px; }
+      .step h3 { font-family:"Playfair Display",Georgia,serif; font-size:25px; letter-spacing:-.045em; margin:50px 0 12px; }
+      .step p { color:#6c7b6a; font-size:12px; line-height:1.75; margin:0; }
+      .dark { background:#17341d; color:#fff; }
+      .dark .step-no { color:#c9e69b; } .dark p { color:#cbd7c9; }
+      .buyer-grid { display:grid; gap:18px; grid-template-columns:1fr 1fr; }
+      .buyer { border-top:1px solid #cfdacb; padding:22px 0; }
+      .buyer strong { font-size:14px; } .buyer p { color:#718070; font-size:12px; line-height:1.7; margin:7px 0 0; max-width:410px; }
+      .control { background:#eef5e7; border:1px solid #d8e5d2; border-radius:18px; padding:30px; }
+      .control h3 { font-family:"Playfair Display",Georgia,serif; font-size:32px; letter-spacing:-.055em; line-height:1.05; margin:0 0 18px; }
+      .control-row { align-items:flex-start; border-top:1px solid #d4e0cf; display:flex; gap:12px; padding:13px 0; } .control-row b { color:#3d7042; font-size:13px; } .control-row span { color:#5e715d; font-size:11px; line-height:1.55; }
+      .cta { background:#17341d; color:#fff; margin-top:70px; padding:88px 0; text-align:center; }
+      .cta h2 { margin:17px auto; max-width:710px; } .cta .eyebrow { color:#cbe69a; } .cta p { color:#c6d4c5; font-size:13px; line-height:1.7; margin:0 auto 25px; max-width:500px; }
+      .cta .button { background:var(--lime); color:#1b3b21; }
+      footer { background:#102615; color:#afc0ad; font-size:10px; padding:27px 0; }
+      footer .wrap { align-items:center; display:flex; justify-content:space-between; } footer strong { color:#fff; }
+      @media (max-width:800px) { .navlinks { display:none; } .hero { padding:55px 0 55px; } .hero-inner,.buyer-grid { grid-template-columns:1fr; } .product { margin:0 9px; transform:none; } .hero h1 { font-size:55px; } .section-top { align-items:start; flex-direction:column; } .steps { grid-template-columns:1fr; } section { padding:72px 0; } .signal-card { border-radius:0; } .product-body { grid-template-columns:110px 1fr; } }
+    </style>
+  </head>
+  <body class="grid">
+    <main>
+      <div class="wrap">
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand" href="#top" aria-label="SignalForge home"><span class="brand-mark"><img src="logo.svg" alt="" /></span><span><strong>SignalForge</strong><small>Verified prospecting</small></span></a>
+          <div class="navlinks"><a href="#workflow">Workflow</a><a href="#control">Control</a><a href="#beta">Private beta</a></div>
+          <a class="button secondary" href="mailto:rafaraf201@gmail.com?subject=SignalForge%20private%20beta">Request access ↗</a>
+        </nav>
+      </div>
+      <header class="hero" id="top">
+        <div class="wrap hero-inner">
+          <div>
+            <p class="eyebrow">Private beta / approval-first outreach</p>
+            <h1 class="display">Prospecting,<br />with a <em>pulse.</em></h1>
+            <p>SignalForge is the private workspace for B2B teams that care about the work before the send: relevant accounts, public-source context, thoughtful drafts, and a real human decision at the end.</p>
+            <div class="hero-actions"><a class="button primary" href="mailto:rafaraf201@gmail.com?subject=SignalForge%20private%20beta">Request a private demo ↗</a><a class="button secondary" href="#workflow">See the workflow ↓</a></div>
+            <div class="micro"><i></i> Built for deliberate B2B prospecting — not bulk automation.</div>
+          </div>
+          <div class="product" aria-label="SignalForge product interface preview">
+            <div class="product-top"><div class="dots"><b></b><b></b><b></b></div><span class="product-title">Lead workspace</span><span class="product-title">Private</span></div>
+            <div class="product-body"><aside class="mock-nav"><div class="mock-logo">✦ SignalForge</div><div class="mock-link active">Command center</div><div class="mock-link">Business discovery</div><div class="mock-link">Lead pipeline</div><div class="mock-link">Review queue</div><div class="mock-link">Compliance</div></aside><div class="mock-main"><div class="mock-head"><strong>Review before send.</strong><span class="mock-tag">APPROVAL REQUIRED</span></div><article class="company"><div class="company-row"><span class="avatar">N</span><span><span class="company-name">Northstar Studio</span><span class="company-meta">Creative services · London</span></span></div><div class="signal">Public-source context</div><div class="line"></div><div class="line short"></div><div class="approve"><span class="check">✓</span> Draft reviewed · final confirmation pending</div></article></div></div>
+          </div>
+        </div>
+      </header>
+      <div class="wrap"><aside class="signal-card"><p class="eyebrow">The operating principle</p><p><strong>Intent before automation.</strong> SignalForge keeps discovery, context, draft writing, review, and sending in a single accountable path.</p></aside></div>
+      <section id="workflow"><div class="wrap"><div class="section-top"><div><p class="eyebrow">A calmer outbound workflow</p><h2 class="display">Find the signal.<br />Keep the context.</h2></div><p class="section-note">Move from “more leads” to a small, defensible list of relevant businesses your team can actually explain.</p></div><div class="steps"><article class="step"><span class="step-no">01 / DISCOVER</span><h3>Find relevant businesses.</h3><p>Search public businesses by keyword, industry, business type, location, and result mode. Review the source before you save anything.</p></article><article class="step dark"><span class="step-no">02 / CONTEXT</span><h3>Build a useful record.</h3><p>Keep company context, notes, visible public contact routes, activity history, and your offer together—where the next decision happens.</p></article><article class="step"><span class="step-no">03 / APPROVE</span><h3>Earn every send.</h3><p>Generate a tailored first draft, edit it, approve it, and confirm the exact send. No background dispatch. No hidden sequence.</p></article></div></div></section>
+      <section id="control"><div class="wrap buyer-grid"><div><p class="eyebrow">Made for high-consideration selling</p><h2 class="display">For teams whose reputation goes out with every message.</h2><div class="buyer"><strong>Boutique B2B agencies</strong><p>Preserve research and message quality while building a small, credible target-account pipeline.</p></div><div class="buyer"><strong>Consultants & fractional leaders</strong><p>Turn a clear point of view into relevant, personalised conversations without losing the detail.</p></div><div class="buyer"><strong>Recruiters & B2B founders</strong><p>Track the account story, not merely the contact address, before deciding to make a first approach.</p></div></div><aside class="control"><p class="eyebrow">Human-in-control</p><h3>Software should make the decision clearer—not make it for you.</h3><div class="control-row"><b>✓</b><span>Public-source discovery and visible business contact context.</span></div><div class="control-row"><b>✓</b><span>AI-assisted drafts that stay editable and reviewable.</span></div><div class="control-row"><b>✓</b><span>Approval gate, final confirmation, activity history, and suppression controls.</span></div><div class="control-row"><b>✓</b><span>Privacy-first operating controls for a more deliberate outreach process.</span></div></aside></div></section>
+      <section class="cta" id="beta"><div class="wrap"><p class="eyebrow">SignalForge / private beta</p><h2 class="display">Your reputation is not a sequence.</h2><p>We are inviting a small number of B2B agencies, consultants, and specialist service firms to give direct feedback on the private beta.</p><a class="button" href="mailto:rafaraf201@gmail.com?subject=SignalForge%20private%20beta">Request a private walkthrough ↗</a></div></section>
+    </main>
+    <footer><div class="wrap"><span><strong>SignalForge</strong> — Verified prospecting</span><span>Private beta · 2026</span></div></footer>
+  </body>
+</html>

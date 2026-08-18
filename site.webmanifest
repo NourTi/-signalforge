@@ -1,0 +1,12 @@
+{
+  "name": "SignalForge — Verified Prospecting",
+  "short_name": "SignalForge",
+  "description": "An approval-first prospecting workspace for B2B service firms.",
+  "start_url": "/-signalforge/",
+  "display": "standalone",
+  "background_color": "#f7f9f3",
+  "theme_color": "#17341d",
+  "icons": [
+    { "src": "logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
