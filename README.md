@@ -10,8 +10,8 @@ The public site has no Manus-branded URL and contains no link to the private app
 
 ## Deployment
 
-After GitHub Pages is enabled from the `main` branch / root folder, the page will be available at:
+After GitHub Pages is enabled from the `main` branch / root folder, the page is available at:
 
-`https://nourti.github.io/signalforge/`
+`https://nourti.github.io/-signalforge/`
 
 For a branded address later, set a custom domain in the repository’s GitHub Pages settings and add the required DNS records with the domain provider.
