@@ -1,0 +1,39 @@
+name: Import SignalForge Open Source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-source:
+    name: Expand reviewed source tree
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Expand reviewed source package
+        run: |
+          set -euo pipefail
+          rm -rf .signalforge-import app
+          mkdir -p .signalforge-import
+          unzip -q signalforge-open-source-import.zip -d .signalforge-import
+          mv .signalforge-import/signalforge-open-source-import/app ./app
+          cp .signalforge-import/signalforge-open-source-import/README.md ./README.md
+          cp .signalforge-import/signalforge-open-source-import/PUBLISHING.md ./PUBLISHING.md
+          rm -rf .signalforge-import
+          rm -f server-compliance.ts
+
+      - name: Commit directly browsable open-source tree
+        run: |
+          set -euo pipefail
+          git config user.name "SignalForge Source Import"
+          git config user.email "noreply@users.noreply.github.com"
+          git add app README.md PUBLISHING.md
+          git rm -f signalforge-open-source-import.zip .github/workflows/import-open-source.yml
+          git commit -m "Publish complete browsable SignalForge source"
+          git push origin HEAD:main
