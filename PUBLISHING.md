@@ -1,24 +1,20 @@
 # Publishing and Source Distribution
 
-## Two deliberately separate deployment layers
+SignalForge has two public layers in this repository.
 
-| Layer | Repository location | Purpose | Runtime |
-| --- | --- | --- | --- |
-| Public marketing site | Repository root | Brand, product story, private-beta route, and social metadata | GitHub Pages |
-| Full SignalForge application | [`signalforge-fullstack-source.zip`](./signalforge-fullstack-source.zip) | React client, TypeScript server, tRPC API, Drizzle/MySQL schema, tests, SMTP, discovery, encryption, and compliance logic | Node.js server plus MySQL-compatible database |
+| Layer | Location | Purpose |
+| --- | --- | --- |
+| Marketing site | Repository root | Static GitHub Pages site published at `https://nourti.github.io/-signalforge/`. |
+| Open-source application | [`app/`](./app/) | Directly browsable React client, Node/Express/tRPC server, MySQL/Drizzle schema, tests, worker source, and setup documentation. |
 
-The public landing site is live at [nourti.github.io/-signalforge](https://nourti.github.io/-signalforge/). It publishes from the `main` branch and repository root.
+GitHub Pages publishes the root static site from `main`. It does **not** execute the full application: server-side workflows require a Node runtime, a MySQL-compatible database, and a private secret manager.
 
-## Important hosting boundary
+## Publishing the marketing site
 
-GitHub Pages serves static files only. It does **not** run a Node.js server, database, encrypted SMTP credentials, public-business discovery service, user authentication, or protected environment variables. The full SignalForge application source is published for inspection and deployment, but must run on a server-side platform.
+Enable GitHub Pages from the repository `main` branch and root directory. A custom domain can be added through GitHub Pages settings and your domain DNS provider.
 
-## Source access
+## Publishing the application
 
-The complete sanitized source export is available as [signalforge-fullstack-source.zip](./signalforge-fullstack-source.zip). It excludes real credentials, database URLs, SMTP passwords, API tokens, local environment files, logs, and customer data. Directly browseable TypeScript includes the [MySQL schema](./app/drizzle/schema.ts) and the application [package configuration](./app/package.json).
+The application is intentionally open source and directly inspectable under `app/`. To run it, follow [`app/README.md`](./app/README.md), configure the private values described in [`app/ENVIRONMENT.md`](./app/ENVIRONMENT.md), connect provider adapters under `app/server/_core/`, apply reviewed database migrations, and deploy the Node.js server to a platform you control.
 
-## Deploying the full application
-
-Download and extract the source package, use Node.js 22+ and pnpm 10+, configure a MySQL-compatible database, and supply the required environment values through your deployment platform’s encrypted secret manager. The source package documents the platform adapter boundaries for authentication, storage, maps, LLM access, and notifications.
-
-For a branded public address, configure a custom domain in GitHub Pages settings and add the matching DNS records with your domain provider.
+Never publish real database URLs, SMTP passwords, OAuth credentials, API tokens, user data, encrypted-secret blobs, or Reply Hub signing secrets. The repository’s `app/.gitignore` and source review process are designed to keep those values out of Git.

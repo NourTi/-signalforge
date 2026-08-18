@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787064141411,
+      "tag": "0000_common_yellow_claw",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787064436637,
+      "tag": "0001_colorful_lily_hollister",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787076878125,
+      "tag": "0002_acoustic_sersi",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787081795169,
+      "tag": "0003_smart_micromax",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787092150147,
+      "tag": "0004_living_lyja",
+      "breakpoints": true
+    }
+  ]
+}

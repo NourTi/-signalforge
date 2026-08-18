@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Manrope", Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "DM Mono", monospace;
+  --color-background: oklch(0.975 0.012 105);
+  --color-foreground: oklch(0.2 0.025 140);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.2 0.025 140);
+  --color-primary: oklch(0.3 0.075 142);
+  --color-primary-foreground: oklch(0.985 0.01 105);
+  --color-muted: oklch(0.94 0.02 112);
+  --color-muted-foreground: oklch(0.49 0.03 140);
+  --color-accent: oklch(0.9 0.065 105);
+  --color-accent-foreground: oklch(0.25 0.045 140);
+  --color-border: oklch(0.88 0.022 112);
+  --color-ring: oklch(0.5 0.1 145);
+  --color-destructive: oklch(0.53 0.2 27);
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { background: #f8faf5; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+  button { @apply outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2; }
+}
+
+@layer utilities {
+  .display-serif { font-family: "Playfair Display", Georgia, serif; }
+  .mono { font-family: "DM Mono", monospace; }
+  .paper-grid { background-image: linear-gradient(rgba(42, 70, 44, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(42, 70, 44, .05) 1px, transparent 1px); background-size: 32px 32px; }
+  .soft-card { box-shadow: 0 1px 1px rgba(33, 53, 38, .035), 0 12px 30px rgba(33, 53, 38, .055); }
+  .fine-rule { background: linear-gradient(90deg, transparent, rgba(38, 72, 46, .2), transparent); }
+  .press { transition: transform 160ms cubic-bezier(.23,1,.32,1), box-shadow 160ms cubic-bezier(.23,1,.32,1); }
+  .press:active { transform: scale(.97); }
+}

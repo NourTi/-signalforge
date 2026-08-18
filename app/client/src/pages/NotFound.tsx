@@ -1,0 +1,3 @@
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+export default function NotFound() { return <main className="grid min-h-screen place-items-center bg-[#f8faf5] p-6 text-center"><div><p className="mono text-[10px] uppercase tracking-[.2em] text-[#708170]">SignalForge / 404</p><h1 className="display-serif mt-4 text-5xl tracking-[-.06em]">Wrong trail.</h1><p className="mt-3 text-sm text-[#758475]">This workspace page does not exist.</p><Link href="/"><Button className="mt-6 rounded-xl bg-[#204226] text-white hover:bg-[#2b5933]">Return to command center</Button></Link></div></main>; }

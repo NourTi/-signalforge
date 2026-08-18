@@ -1,0 +1,11 @@
+name = "signalforge-reply-hub"
+main = "src/index.ts"
+compatibility_date = "2026-08-18"
+
+# Copy this file to wrangler.toml before deployment. Keep all values below as
+# Worker secrets; do not commit real values in this repository.
+#
+# npx wrangler secret put SIGNALFORGE_ENDPOINT
+# npx wrangler secret put SIGNALFORGE_SHARED_SECRET
+# npx wrangler secret put SIGNALFORGE_WORKSPACE_ID
+# npx wrangler secret put SIGNALFORGE_INBOUND_ADDRESS
